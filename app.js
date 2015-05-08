@@ -160,10 +160,10 @@ app.use(function(req,res,next){
 });
 
 // routing middleware
-app.use('/', routes);
+// app.use('/', routes);
 // make sure that users is last at there is routing to bump anyone who
 // is not logged in
-app.use('/users', users);
+app.use('/', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
