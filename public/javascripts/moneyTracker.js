@@ -102,7 +102,7 @@ app.run(function(editableOptions) {
             };
 
             //if subtract of add was not clicked last, check output to see if it is 0, if it is, replace with -
-                //if output is not 0, set subtract flag, push number to savedval, push -
+            //if output is not 0, set subtract flag, push number to savedval, push -
             //if subtract was clicked last, do nothing
             //if add was clicked last, pop off the + and push a + to savedval
             var subtract = function(){

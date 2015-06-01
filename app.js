@@ -4,7 +4,7 @@ var express = require('express'),
     path = require('path'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
-    cookieParser = require('cookie-parser'),
+    cookieParser = require('cookie-parser'),  //learn this
     bodyParser = require('body-parser'),
     session = require('express-session'),
     // ============ROUTES=============
@@ -17,10 +17,10 @@ var express = require('express'),
     // mongo dependencies
     MongoClient = require('mongodb').MongoClient,
     server = require('http').Server(app),
-    io = require('socket.io')(server),
-    // this is a litte confusing it is used to parse mogo id's
+    io = require('socket.io')(server),              //learn sockets
+    // this is a litte confusing it is used to parse mongo id's
     ObjectId = require('mongodb').ObjectID,
-    Chance = require('chance'),
+    Chance = require('chance'),                     //what is this?
     chance = new Chance(),
     userDB = "userInfo",
     templateDB = "gameTemplates",
@@ -30,7 +30,7 @@ var express = require('express'),
 
     //============Authentication==============
     //authentication dependencies
-    passport = require('passport'),
+    passport = require('passport'),                 //learn this
     crypto = require('crypto'),
     LocalStrategy = require('passport-local').Strategy,
     MongoStore = require('connect-mongo')(session),
@@ -160,10 +160,10 @@ app.use(function(req,res,next){
 });
 
 // routing middleware
-// app.use('/', routes);
+app.use('/', routes);
 // make sure that users is last at there is routing to bump anyone who
 // is not logged in
-app.use('/', users);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
